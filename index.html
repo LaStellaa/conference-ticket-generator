@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Conference ticket generator</title>
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .attribution a {
+        color: hsl(327, 71%, 69%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="main-container">
+        <div class="logo">
+          <img class="logo" src="./assets/images/logo-full.svg" alt="logo" />
+        </div>
+        <section class="heading-content">
+          <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+          <p>Secure your spot at next year's biggest coding conference.</p>
+        </section>
+        <form action="#" method="POST">
+          <label for="file-upload">Upload Avatar</label>
+
+          <div class="file-upload">
+            <input
+              type="file"
+              id="file-upload"
+              name="picture"
+              accept="image/*"
+            />
+            <div class="upload-img">
+              <img src="./assets/images/icon-upload.svg" alt="" />
+            </div>
+            <p class="drag-drop">Drag and drop or click to upload</p>
+          </div>
+          <div class="upload-paragraph">
+            <img src="./assets/images/icon-info.svg" alt="icon info" />
+            <p class="file-size">
+              Upload your photo (JPG or PNG, max size: 500KB).
+            </p>
+          </div>
+          <div class="upload-paragraph-error">
+            <img src="./assets/images/icon-info.svg" alt="icon info" />
+            <p class="file-error">
+              File too large. Please upload a photo under 500KB.
+            </p>
+          </div>
+          <div class="form-details">
+            <label for="name">Full Name</label>
+            <input type="text" name="fullName" id="name" />
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="example@email.com" />
+            <div class="email-error">
+              <img src="./assets/images/icon-info.svg" alt="icon info" />
+              <p class="email-error-message">
+                Please enter a valid email address.
+              </p>
+            </div>
+            <label for="username">GitHub Username</label>
+            <input type="text" placeholder="@yourusername" id="username" />
+          </div>
+        </form>
+        <button>Generate My Ticket</button>
+      </div>
+      <div class="ticket-container">
+        <div class="logo">
+          <img class="logo" src="./assets/images/logo-full.svg" alt="logo" />
+        </div>
+        <section class="ticket-header">
+          <h1>
+            Congrats, <span id="ticket-name">x</span>! Your ticket is ready.
+          </h1>
+          <p>
+            We've emailed your ticket to <span id="ticket-email">x</span> and
+            will send updates in the run up to the event.
+          </p>
+        </section>
+        <section class="ticket">
+          <img
+            class="ticket-outline"
+            src="./assets/images/pattern-ticket.svg"
+            alt="ticket outline"
+          />
+          <div class="ticket-content">
+            <div class="conference-details">
+              <img src="./assets/images/logo-mark.svg" alt="" />
+              <div class="details">
+                <h2>Coding Conf</h2>
+                <p>Jan 31, 2025 / Austin, TX</p>
+              </div>
+            </div>
+            <div class="person-details">
+              <img
+                src="./assets/images/image-avatar.jpg"
+                alt="personal image"
+              />
+              <div class="name-email">
+                <h3 class="ticket-bottom-name">x - full name</h3>
+                <div class="email-container">
+                  <img
+                    src="./assets/images/icon-github.svg"
+                    alt="github icon"
+                  />
+                  <p class="github-username">x- username</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">LaStella</a>.
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
