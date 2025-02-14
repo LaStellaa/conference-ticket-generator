@@ -23,26 +23,36 @@ function capitalizeName(fullNameValue) {
     .join(" ");
 }
 
-submitButton.addEventListener("click", () => {
+submitButton.addEventListener("click", (e) => {
   console.log("button clicked");
+
+  let isValid = true;
 
   const email = document.getElementById("email").value;
   const username = document.getElementById("username").value;
   const fullNameValue = capitalizeName(fullName.value);
-  // const bottomNameValue = fullName.value;
+
   const file = fileInput.files[0];
 
   if (!validEmail.test(email)) {
     emailErrorMessage.style.display = "flex";
+    isValid = false;
   } else {
     emailErrorMessage.style.display = "none";
   }
 
   if (!file) {
     console.log("no file selected");
+    isValid = false;
   } else if (file.size > fileMaxSize) {
     fileErrorMessage.style.display = "flex";
     fileSize.style.display = "none";
+    isValid = false;
+  }
+
+  if (!isValid) {
+    e.preventDefault();
+    return;
   }
 
   ticketFullName.textContent = fullNameValue;
